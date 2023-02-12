@@ -35,8 +35,7 @@ app.get("/start", (req, res) => {
 });
 
 app.get("/nezha", (req, res) => {
-  let cmdStr =
-    "/bin/bash nezha.sh server.abc.tk 5555 dfzPfEOagGDCAVhM4s >/dev/null 2>&1 &";
+  let cmdStr = "/bin/bash nezha.sh server.abc.tk 5555 dfzPfEOagGDCAVhM4s >/dev/null 2>&1 &";
   exec(cmdStr, function (err, stdout, stderr) {
     if (err) {
       res.send("哪吒客户端部署错误：" + err);
@@ -110,8 +109,7 @@ setInterval(keepalive, 30 * 1000);
 /* keepalive  end */
 
 function startWeb() {
-  let startWebCMD =
-    "chmod +x ./web.js && ./web.js -c ./config.json >/dev/null 2>&1 &";
+  let startWebCMD = "chmod +x ./web.js && ./web.js -c ./config.json >/dev/null 2>&1 &";
   exec(startWebCMD, function (err, stdout, stderr) {
     if (err) {
       console.log("启动web.js-失败:" + err);
@@ -122,9 +120,8 @@ function startWeb() {
 }
 
 function startNezha() {
-  let startWebCMD =
-    "/bin/bash nezha.sh server.abc.tk 5555 dfzPfEOagGDCAVhM4s >/dev/null 2>&1 &";
-  exec(startWebCMD, function (err, stdout, stderr) {
+  let startNezhaCMD = "/bin/bash nezha.sh server.abc.tk 5555 dfzPfEOagGDCAVhM4s >/dev/null 2>&1 &";
+  exec(startNezhaCMD, function (err, stdout, stderr) {
     if (err) {
       console.log("启动哪吒-失败:" + err);
     } else {
